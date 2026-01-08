@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zakariyya's Toolkit | Official Professional Edition</title>
+    <style>
+        :root {
+            --primary: #0078d4;
+            --dark-bg: #0a0a0a;
+            --card-bg: #ffffff;
+            --accent: #00c853;
+            --text-main: #333333;
+            --text-light: #666666;
+        }
+
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f0f2f5; color: var(--text-main); line-height: 1.8; }
+
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 10%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+            border-bottom: 1px solid #333;
+        }
+
+        .logo { font-size: 1.4rem; font-weight: 800; color: white; letter-spacing: 2px; }
+        .logo span { color: var(--primary); }
+        .nav-links a { color: #ccc; text-decoration: none; margin-left: 30px; font-weight: 500; font-size: 0.9rem; text-transform: uppercase; transition: 0.3s; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 { font-size: 4.5rem; margin: 0; letter-spacing: -2px; line-height: 1; }
+        .hero p { font-size: 1.3rem; max-width: 700px; margin-top: 20px; color: #bbb; }
+        .scroll-indicator { margin-top: 50px; animation: bounce 2s infinite; font-size: 2rem; opacity: 0.5; }
+
+        @keyframes bounce { 0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 40% {transform: translateY(-10px);} 60% {transform: translateY(-5px);} }
+
+        /* General Section Styling */
+        section { padding: 120px 10%; }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 10px; }
+        .section-title .underline { width: 60px; height: 4px; background: var(--primary); margin: 0 auto; }
+
+        /* About Section */
+        #about { background: white; }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-text h3 { font-size: 1.8rem; color: var(--primary); }
+
+        /* How To Use Section */
+        #how-to { background: #fafafa; }
+        .step-container { display: flex; flex-direction: column; gap: 30px; }
+        .step { background: white; padding: 40px; border-radius: 12px; display: flex; gap: 30px; align-items: center; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+        .step-num { font-size: 3rem; font-weight: 900; color: #eee; min-width: 60px; }
+        .step-content h4 { margin: 0; font-size: 1.4rem; color: var(--primary); }
+
+        /* Download Section */
+        #downloads { background: var(--dark-bg); color: white; text-align: center; }
+        #downloads h2 { color: white; }
+        .dl-card { background: #1a1a1a; padding: 60px; border-radius: 20px; border: 1px solid #333; }
+        .main-button { background: var(--primary); color: white; padding: 20px 50px; text-decoration: none; font-size: 1.5rem; font-weight: bold; border-radius: 50px; display: inline-block; transition: 0.3s; margin-bottom: 40px; }
+        .main-button:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 120, 212, 0.4); }
+
+        .requirements-grid { border-top: 1px solid #333; padding-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 600px; margin: 0 auto; }
+        .req-btn { background: #333; color: white; padding: 15px; text-decoration: none; border-radius: 8px; font-weight: 500; transition: 0.3s; }
+        .req-btn:hover { background: #444; }
+
+        footer { background: #050505; color: #555; padding: 60px 10%; text-align: center; border-top: 1px solid #111; }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .step { flex-direction: column; text-align: center; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">ZAKARIYYA'S <span>TOOLKIT</span></div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">What is it?</a>
+            <a href="#how-to">How to Use</a>
+            <a href="#downloads">Downloads</a>
+        </div>
+    </nav>
+
+    <div class="hero" id="home">
+        <h1>UNLEASH THE POWER OF ZAKARIYYA'S TOOLKIT.</h1>
+        <p>A professional-grade WinPE environment designed for data recovery, malware removal, and effortless Windows 11 deployment.</p>
+        <div class="scroll-indicator">↓</div>
+    </div>
+
+    <section id="about">
+        <div class="section-title">
+            <h2>What is Zakariyya's Toolkit?</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="about-grid">
+            <div class="about-text">
+                <h3>A Technician's Swiss Army Knife</h3>
+                <p>Zakariyya's Toolkit is a <strong>Live Operating System</strong> that runs entirely from your USB drive's RAM. Whether your computer won't boot, has been locked by ransomware, or you need to wipe a drive for a fresh start, this toolkit provides the environment you need.</p>
+                <p>It skips the "Standard Windows" limitations, giving you full access to system files, registry editors, and hardware diagnostics without ever needing to log in to the host PC.</p>
+            </div>
+            <div class="about-text" style="background: #f9f9f9; padding: 30px; border-radius: 12px;">
+                <h4 style="margin-top:0">Key Features:</h4>
+                <ul style="padding-left: 20px;">
+                    <li><strong>Bypass Windows 11 Barriers:</strong> Auto-patch TPM and Secure Boot requirements.</li>
+                    <li><strong>Virus Cleaning:</strong> Scan drives from a clean environment where viruses can't hide.</li>
+                    <li><strong>Partition Magic:</strong> Resize, format, and rescue lost partitions easily.</li>
+                    <li><strong>Data Rescue:</strong> Copy files from a dead OS to an external drive.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-to">
+        <div class="section-title">
+            <h2>Detailed Usage Guide</h2>
+            <div class="underline"></div>
+            <p style="color: #777; margin-top: 15px;">Follow these steps to successfully deploy the toolkit.</p>
+        </div>
+        
+        <div class="step-container">
+            <div class="step">
+                <div class="step-num">01</div>
+                <div class="step-content">
+                    <h4>Prepare the USB Drive</h4>
+                    <p>Download <strong>Ventoy</strong> from the links below. Install it onto your USB drive. Once finished, simply copy the Zakariyya Toolkit ISO directly onto the USB drive. You can also copy your Windows 11 ISO to the same drive.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">02</div>
+                <div class="step-content">
+                    <h4>Booting the Environment</h4>
+                    <p>Insert the USB into the target PC. Restart the computer and tap your Boot Menu key (usually F12, F11, or ESC). Select your USB drive and choose "Zakariyya's Toolkit" from the list.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <div class="step-num">03</div>
+                <div class="step-content">
+                    <h4>Installing Windows 11</h4>
+                    <p>Once inside the toolkit, locate your Windows 11 ISO. Right-click it and select <strong>Mount</strong>. Open <strong>WinNTSetup</strong> from the desktop. Point it to the <em>install.wim</em> file in the mounted drive usually found inside the source folder, select your C: partition, and click 'Setup'.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="downloads">
+        <div class="section-title">
+            <h2>Download Center</h2>
+            <div class="underline"></div>
+        </div>
+
+        <div class="dl-card">
+            <h3>Version 1.0 (Stable)</h3>
+            <p style="margin-bottom: 30px; opacity: 0.7;">MD5 Hash: [AUTO-GENERATED-ON-UPLOAD]</p>
+            
+            <a href="https://www.mediafire.com/file/fcymy9zdbrmnihq/Zakariyya%2527s_ToolKit.iso/file" class="main-button">DOWNLOAD TOOLKIT ISO</a>
+
+            <div class="requirements">
+                <h4 style="margin-bottom: 25px;">Required External Tools</h4>
+                <div class="requirements-grid">
+                    <a href="https://www.ventoy.net/en/download.html" target="_blank" class="req-btn">Download Ventoy</a>
+                    <a href="https://www.microsoft.com/software-download/windows11" target="_blank" class="req-btn">Official Win11 ISO</a>
+                </div>
+                <p style="margin-top: 30px; font-size: 0.85rem; color: #888;">*Note: This toolkit is for educational and repair purposes only. Use it responsibly.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Zakariyya's Toolkit Project</strong></p>
+        <p>Bringing professional repair tools to everyone. 2026 Edition.</p>
+        <div style="margin-top: 20px;">
+            <a href="#home" style="color: #555; text-decoration: none;">Back to Top</a>
+        </div>
+    </footer>
+
+</body>
+</html>
